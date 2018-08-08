@@ -300,9 +300,9 @@ const struct TPairData BNC_PairsData[] = {
 
 const struct TMarketData MarketsData[] = {
     // binance
-    {.market_name = "Binance",
-     .num_pairs = ITEMSOF(BNC_PairsData),
-     .pairs_data = BNC_PairsData,
+    {.market_name   = "Binance",
+     .num_pairs     = ITEMSOF(BNC_PairsData),
+     .pairs_data    = BNC_PairsData,
      .max_bars_for_request = 500,
      .requests_freezytime = 1000},  // ms
     // poloniex
@@ -437,7 +437,6 @@ int main(int argc, char *argv[])
                     cout << KRED;
                     ShowMessageAndExit("Can't get last timestamp form DB. exit.", -1);
                 }
-//                time_t db_last_open_time = str_last_open_time.asInt64();
                 cout << "      Timestamp form the last record of DB = " << db_last_open_time << endl;
                 if( (db_last_open_time + ts_increment_1bar) > end_timestamp ) {
                     // данные актуальные, читать ничего не надо
